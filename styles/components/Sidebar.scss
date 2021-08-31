@@ -1,0 +1,37 @@
+.kdn-site-logo {
+    img {
+        height: 40px;
+    }
+}
+
+.kdn-layout-sider-header {
+    .kdn-linebar {
+        top: unset !important;
+        left: 32px !important;
+    }
+}
+
+.kdn-sidebar-content {
+    .ant-menu-item {
+        span {
+            a {
+                padding: 10px 0;
+            }
+        }
+
+        &.ant-menu-item-selected {
+            span {
+                a {
+                    span {
+                        color: inherit;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.kdn-bottom-menu {
+    position: absolute;
+    bottom: 0;
+}
