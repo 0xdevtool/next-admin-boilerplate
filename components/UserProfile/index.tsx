@@ -13,16 +13,10 @@ const UserProfile: NextPage = () => {
     );
 
     return (
-        <div className="kdn-flex-row kdn-align-items-center kdn-mb-4 kdn-avatar-row">
+        <div className="kdn-flex-row kdn-align-items-center kdn-avatar-row">
             <Popover placement="bottomRight" content={userMenuOptions} trigger="click">
-                <Avatar
-                    src="https://via.placeholder.com/150x150"
-                    className="kdn-size-40 kdn-pointer kdn-mr-2"
-                    alt=""
-                />
-                <span className="kdn-avatar-name">
-                    Nikola Tesla <DownOutlined className="kdn-ml-1" />
-                </span>
+                <span className="kdn-avatar-name">Nikola Tesla</span>
+                <Avatar src="https://via.placeholder.com/150x150" className="kdn-size-40 kdn-pointer kdn-mr-2" alt="" />
             </Popover>
         </div>
     );

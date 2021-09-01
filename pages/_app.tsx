@@ -1,10 +1,12 @@
 import '../styles/default.css';
 import '../styles/globals.scss';
+import 'nprogress/nprogress.css';
 
 import { ConfigProvider } from 'antd';
 import AppLocale from 'locales';
 import dynamic from 'next/dynamic';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
+import nProgress from 'nprogress';
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 import { Provider, useSelector } from 'react-redux';
@@ -14,6 +16,12 @@ import FlatLayout from '../components/FlatLayout';
 import PortalLayout from '../components/PortalLayout';
 
 import type { AppProps } from 'next/app';
+
+// add nprogress bar
+Router.events.on('routeChangeStart', nProgress.start);
+Router.events.on('routeChangeError', nProgress.done);
+Router.events.on('routeChangeComplete', nProgress.done);
+
 function MainLayout({ Component, pageProps }: AppProps) {
     const router = useRouter();
 
