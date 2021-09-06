@@ -1,27 +1,27 @@
 .kdn-layout-sider-header {
-    padding-left: 32px !important;
+  padding-left: 32px !important;
 }
 
 .kdn-sidebar-content {
-    .ant-menu-item {
-        span {
-            a {
-                padding: 10px 0;
-            }
-        }
-
-        &.ant-menu-item-selected {
-            span {
-                a {
-                    span {
-                        color: inherit;
-                    }
-                }
-            }
-        }
+  .ant-menu-item {
+    span {
+      a {
+        padding: 10px 0;
+      }
     }
+
+    &.ant-menu-item-selected {
+      span {
+        a {
+          span {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
 }
 
 .kdn-layout-sider-scrollbar {
-    padding: 10px 0;
+  padding: 10px 0;
 }

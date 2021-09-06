@@ -1,27 +1,27 @@
 @import './variables.scss';
 
 @media screen and (max-width: $screen-md-max) {
-    .ant-layout-header {
-        justify-content: space-between !important;
-    }
+  .ant-layout-header {
+    justify-content: space-between !important;
+  }
 }
 
 @media screen and (min-width: $screen-lg-min) {
-    .ant-layout-header {
-        justify-content: flex-end !important;
-    }
+  .ant-layout-header {
+    justify-content: flex-end !important;
+  }
 }
 
 @media screen and (max-width: $screen-md-min) {
-    .kdr-main-content-wrapper {
-        width: 100% !important;
-    }
+  .kdr-main-content-wrapper {
+    width: 100% !important;
+  }
 
-    .ant-card-body {
-        padding: 10px !important;
-    }
+  .ant-card-body {
+    padding: 10px !important;
+  }
 
-    .kdr-datepicker {
-        min-width: 6rem !important;
-    }
+  .kdr-datepicker {
+    min-width: 6rem !important;
+  }
 }

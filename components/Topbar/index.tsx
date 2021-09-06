@@ -35,7 +35,9 @@ const Topbar: NextPage = () => {
 
             <div className="kdn-d-block kdn-d-lg-none kdn-pointer">
                 <Link href="/">
-                    <Image alt="" className={styles.smlogo} src={wlogo} />
+                    <a>
+                        <Image alt="" className={styles.smlogo} src={wlogo} />
+                    </a>
                 </Link>
             </div>
 

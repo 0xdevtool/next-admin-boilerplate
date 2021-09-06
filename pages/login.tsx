@@ -6,12 +6,10 @@ import { login } from 'data/Auth';
 import useIntlMessage from 'hooks/UseIntlMessage';
 import { useRouter } from 'next/router';
 import React, { useCallback, useEffect, useState } from 'react';
-import { useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateAuthUserInfo } from 'store/actions';
 
 const SignInPage: React.FC<any> = () => {
-    const intl = useIntl();
     const dispatch = useDispatch();
     const router = useRouter();
     const user = useSelector((state: any) => state.auth?.user);
@@ -25,7 +23,7 @@ const SignInPage: React.FC<any> = () => {
         }
 
         setLoading(false);
-    }, [user]);
+    }, [user, router]);
 
     const onFinish = useCallback(
         (payload) => {
@@ -35,25 +33,17 @@ const SignInPage: React.FC<any> = () => {
                 .then((data: any) => {
                     if (data != null) {
                         dispatch(updateAuthUserInfo(data));
-                        notifySuccess(
-                            intl.formatMessage({
-                                id: 'page.content.login.form.alert.success',
-                            })
-                        );
+                        notifySuccess(useIntlMessage('page.content.login.form.alert.success'));
                     }
                 })
                 .catch(() => {
-                    notifyError(
-                        intl.formatMessage({
-                            id: 'page.content.login.form.alert.error',
-                        })
-                    );
+                    notifyError(useIntlMessage('page.content.login.form.alert.error'));
                 })
                 .finally(() => {
                     setInProgress(false);
                 });
         },
-        [form, user]
+        [form, dispatch]
     );
 
     return (

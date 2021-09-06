@@ -65,7 +65,7 @@ const DynamicColumnSettings: React.FC<DynamicColumnSettingsProps> = ({
             setSelectedColumns(defaultSelectedColumns);
             setApplyDisable(false);
         }
-    }, [columns]);
+    }, [columns, defaultSelectedColumns]);
 
     const onSelectedColumnChanged = (e: any) => {
         setSelectedColumns(e.slice());
@@ -81,7 +81,7 @@ const DynamicColumnSettings: React.FC<DynamicColumnSettingsProps> = ({
             const popOverElm: any = modalRef.current;
             popOverElm.setPopupVisible(false);
         }
-    }, [modalRef, selectedColumns]);
+    }, [modalRef, selectedColumns, onSelectedChange]);
 
     const getPopupContainer = (triggerNode: any) =>
         // eslint-disable-next-line no-undef

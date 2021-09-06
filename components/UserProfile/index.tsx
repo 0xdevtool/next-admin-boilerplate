@@ -12,7 +12,7 @@ const UserProfile = () => {
     const onLogOut = useCallback(() => {
         dispatch(logOut());
         router.push('/login');
-    }, [dispatch]);
+    }, [dispatch, router]);
 
     const userMenuOptions = (
         <ul className="kdn-user-popover">
