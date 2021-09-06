@@ -1,8 +1,33 @@
 {
-  "app.slogan": "Kongd NextJS admin dashboard templates. Hope you fun!",
+  "page.meta.title.home": "Home page",
+  "page.meta.description.home": "Hello home page",
+  "page.meta.title.post.list": "Active posts",
+  "page.meta.description.post.list": "Active posts",
+  "page.meta.title.user.list": "Active users",
+  "page.meta.description.user.list": "Active users",
+  "page.meta.title.auth.login": "Login",
+  "page.meta.description.auth.login": "Login to system",
+  "page.meta.title.auth.island": "Access forbidden",
+  "page.meta.description.auth.island": "Permission denied",
 
-  "sidebar.samplePage": "Sample page",
-  "sidebar.productListPage": "Products",
-  "sidebar.dashboardPage": "Dashboard",
-  "sidebar.settingPage": "Settings"
+  "sidebar.post.list": "All Posts",
+  "sidebar.post.list.active": "Active posts",
+  "sidebar.user.list": "All users",
+  "sidebar.user.list.active": "Active users",
+  "sidebar.settingPage": "Settings",
+
+  "component.dynamictable.setting.column.title": "Select a display column",
+  "component.dynamictable.setting.column.defaultname": "Column without title",
+  "component.dynamictable.setting.column.submit": "Apply",
+
+  "page.content.login.header": "Login",
+  "page.content.login.form.email.required": "Please enter your e-mail address.",
+  "page.content.login.form.email.placeholder": "Registered email address",
+  "page.content.login.form.password.required": "Please enter your password.",
+  "page.content.login.form.password.placeholder": "password",
+  "page.content.login.form.remember": "Remember password",
+  "page.content.login.form.forgotpassword": "Forget your password",
+  "page.content.login.form.submit": "Login",
+  "page.content.login.form.alert.success": "Login was successful",
+  "page.content.login.form.alert.error": "Login failed, please try again"
 }

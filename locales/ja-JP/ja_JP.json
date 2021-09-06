@@ -1,8 +1,34 @@
 {
-  "app.slogan": "KongdNextJS管理ダッシュボードテンプレート。 楽しんでください！",
+  "page.meta.title.home": "ホームページ",
+  "page.meta.description.home": "こんにちはホームページ",
+  "page.meta.title.post.list": "アクティブな投稿",
+  "page.meta.description.post.list": "アクティブな投稿",
+  "page.meta.title.user.list": "アクティブユーザー",
+  "page.meta.description.user.list": "アクティブユーザー",
+  "page.meta.title.auth.login": "ログイン",
+  "page.meta.description.auth.login": "システムにログイン",
+  "page.meta.title.auth.island": "アクセス禁止",
+  "page.meta.description.auth.island": "アクセス拒否",
 
-  "sidebar.samplePage": "Sample page",
-  "sidebar.productListPage": "製品",
-  "sidebar.dashboardPage": "Dashboard",
-  "sidebar.settingPage": "設定"
+  "sidebar.post.list": "すべての投稿",
+  "sidebar.post.list.active": "アクティブな投稿",
+  "sidebar.user.list": "全てのユーザー",
+  "sidebar.user.list.active": "アクティブユーザー",
+  "sidebar.settingPage": "設定",
+
+  "component.dynamictable.setting.column.title": "表示列を選択します",
+  "component.dynamictable.setting.column.defaultname": "テキストとしてタイトルのない列",
+  "component.dynamictable.setting.column.submit": "適用",
+
+  "page.content.login.header": "ログイン",
+  "page.content.login.form.email.required": "メールアドレスを入力してください。",
+  "page.content.login.form.email.placeholder": "登録したメールアドレス",
+  "page.content.login.form.password.required": "パスワードを入力してください。",
+  "page.content.login.form.password.placeholder": "パスワード",
+  "page.content.login.form.remember": "パスワードを記憶する",
+  "page.content.login.form.forgotpassword": "パスワードをお忘れですか",
+  "page.content.login.form.submit": "ログイン",
+  "page.content.login.form.alert.success": "ログインに成功しました",
+  "page.content.login.form.alert.error": "ログインに失敗しました再試行してください"
+  
 }
