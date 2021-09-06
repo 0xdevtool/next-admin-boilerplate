@@ -1,34 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kong Next Admin Dashboard
 
-## Getting Started
+_NextJs SSG admin template by Kongd team._
 
-First, run the development server:
+Key goals:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+-   ReactJs + Typescript + NextJs
+-   Ant design components + Ant design icons
+-   Redux for React + Redux thunk
+-   Axios
+-   React hook + Rxjs for React hook
+-   SASS style with `sass`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Table of contents
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+-   [Quick start](#quick-start)
+-   [Quick develop without Backend APIs](docs/mock-api.md)
+-   [Customize configurations](#customize-configurations)
+-   [Production bundle](#production-bundle)
+-   [Multiple languages](docs/multiple-languages.md)
+-   [Base stylesheet styles](docs/base-stylesheets.md)
+-   [Screenshots](#screenshots)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Quick start
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+-   Prerequisite:
 
-## Learn More
+    -   NodeJs 10 or above
+    -   Yarn latest
 
-To learn more about Next.js, take a look at the following resources:
+-   Install depedencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+      yarn
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+-   Start dev server:
 
-## Deploy on Vercel
+    -   Using mock json server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+        ```bash
+            yarn dev
+        ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    -   Or without mock server:
+
+        ```bash
+            yarn start
+        ```
+
+## Customize configurations
+
+-   Enviroment matching with your stage, refer [official documents](https://create-react-app.dev/docs/adding-custom-environment-variables/).
+
+-   Quick implement Front-end with mock json server. Update to `mock/db.json`. See more details from [official documents](https://github.com/typicode/json-server#getting-started).
+
+## Production bundle
+
+-   Clean depedencies
+
+    ```bash
+      yarn
+    ```
+
+-   Update production environments at
+
+    ```bash
+      .env.production
+    ```
+
+-   Run linters to validate source code
+
+    ```bash
+      yarn lint
+    ```
+
+-   Run build with production mode
+
+    ```bash
+      yarn build
+    ```
+
+-   Production bundle resources at `build` directory.
+
+## Screenshots
+
+![5.png](docs/screenshots/5.png)
+
+![6.png](docs/screenshots/6.png)
+
+![7.png](docs/screenshots/7.png)
+
+![1.png](docs/screenshots/1.png)
+
+![2.png](docs/screenshots/2.png)
+
+![3.png](docs/screenshots/3.png)
+
+![4.png](docs/screenshots/4.png)
+
+![9.png](docs/screenshots/9.png)

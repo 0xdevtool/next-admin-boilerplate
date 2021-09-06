@@ -45,7 +45,7 @@ const UserListPage: FC<any> = () => {
 
     return (
         <>
-            <Breadcrumb className="kdr-page-breadcrumbs">
+            <Breadcrumb className="kdn-page-breadcrumbs">
                 <Breadcrumb.Item href="/">
                     <HomeOutlined />
                 </Breadcrumb.Item>

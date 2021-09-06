@@ -1,6 +1,6 @@
 @import '../_variables.scss';
 
-.kdr-layout-sider-scrollbar {
+.kdn-layout-sider-scrollbar {
   height: calc(100vh - 175px) !important;
 }
 
@@ -42,7 +42,7 @@
   }
 }
 
-.kdr-page-breadcrumbs {
+.kdn-page-breadcrumbs {
   margin: 0 0 1rem 0;
 }
 
@@ -69,7 +69,7 @@
   }
 }
 
-.kdr-right-spin {
+.kdn-right-spin {
   .anticon-spin {
     &.ant-spin-dot {
       left: 80% !important;
@@ -81,11 +81,11 @@
   opacity: 0.85;
 }
 
-.kdr-datepicker {
+.kdn-datepicker {
   min-width: 10rem;
 }
 
-.kdr-hidden-tabs {
+.kdn-hidden-tabs {
   .ant-tabs-nav {
     display: none;
   }
@@ -97,7 +97,7 @@
   padding-right: 0 !important;
 }
 
-.kdr-letter-spacing-xs {
+.kdn-letter-spacing-xs {
   letter-spacing: 1px !important;
 }
 
