@@ -1,10 +1,4 @@
-import { LAYOUT_TYPE, NAV_STYLE, SWITCH_LANGUAGE, WINDOW_WIDTH } from 'store/ActionTypes';
-
-export function updateWindowWidth(width: number) {
-    return (dispatch: any) => {
-        dispatch({ type: WINDOW_WIDTH, width });
-    };
-}
+import { LAYOUT_TYPE, SWITCH_LANGUAGE } from '../ActionTypes';
 
 export function onLayoutTypeChange(layoutType: any) {
     return (dispatch: any) => {

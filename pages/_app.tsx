@@ -17,6 +17,7 @@ import FlatLayout from '../components/FlatLayout';
 import PortalLayout from '../components/PortalLayout';
 
 import type { AppProps } from 'next/app';
+import { NAV_STYLE_FIXED } from 'store/ActionTypes';
 // add nprogress bar
 Router.events.on('routeChangeStart', nProgress.start);
 Router.events.on('routeChangeError', nProgress.done);
@@ -57,6 +58,16 @@ function MainApp(props: any) {
     const initialState = {
         auth: {
             user: loadStorageAuthUserInfo(),
+        },
+        common: {
+            navStyle: NAV_STYLE_FIXED,
+            /* eslint-disable-next-line */
+            width: window?.innerWidth,
+            error: '',
+            loading: false,
+            message: '',
+            navCollapsed: true,
+            pathname: '/',
         },
     };
     const store = useStore({ ...props.pageProps.initialReduxState, ...initialState });

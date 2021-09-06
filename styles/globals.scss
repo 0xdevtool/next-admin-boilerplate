@@ -1,5 +1,8 @@
 @import '../node_modules/flag-icon-css/css/flag-icon.min.css';
 @import './components/index.scss';
+@import './base/index.scss';
+@import './responsive/index.scss';
+@import './antd/index.scss';
 
 html,
 body {

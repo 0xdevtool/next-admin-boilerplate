@@ -12,9 +12,9 @@ import styles from './SidebarLogo.module.scss';
 const SidebarLogo: NextPage = () => {
     const dispatch = useDispatch();
 
-    let { width, navStyle } = useSelector((state: any) => state.settings);
-    let { navCollapsed } = useSelector((state: any) => state.common);
+    let { navCollapsed, width, navStyle } = useSelector((state: any) => state.common);
 
+    console.log(width);
     if (width < TAB_SIZE && navStyle === NAV_STYLE_FIXED) {
         navStyle = NAV_STYLE_DRAWER;
     }
@@ -41,9 +41,9 @@ const SidebarLogo: NextPage = () => {
             ) : null}
 
             <Link href="/">
-                <div className="kdn-site-logo">
+                <a className="kdn-site-logo">
                     <Image alt="log" className={styles.logo} src={wlogo} />
-                </div>
+                </a>
             </Link>
         </div>
     );

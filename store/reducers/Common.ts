@@ -1,13 +1,16 @@
 import {
-  FETCH_ERROR,
-  FETCH_START,
-  FETCH_SUCCESS,
-  HIDE_MESSAGE,
-  SHOW_MESSAGE,
+  NAV_STYLE,
+  NAV_STYLE_FIXED,
   TOGGLE_COLLAPSED_NAV,
+  WINDOW_WIDTH,
 } from 'store/ActionTypes';
 
+let window: any;
+
 const INIT_STATE = {
+  navStyle: NAV_STYLE_FIXED,
+  /* eslint-disable-next-line */
+  width: window?.innerWidth,
   error: '',
   loading: false,
   message: '',
@@ -17,35 +20,30 @@ const INIT_STATE = {
 
 export default (state = INIT_STATE, action: any) => {
   switch (action.type) {
-    case '@@router/LOCATION_CHANGE': {
-      return {
-        ...state,
-        pathname: action.payload.location.pathname,
-        navCollapsed: false,
-      };
-    }
-    case TOGGLE_COLLAPSED_NAV: {
-      return {
-        ...state,
-        navCollapsed: action.navCollapsed,
-      };
-    }
-    case FETCH_START: {
-      return { ...state, error: '', message: '', loading: true };
-    }
-    case FETCH_SUCCESS: {
-      return { ...state, error: '', message: '', loading: false };
-    }
-    case SHOW_MESSAGE: {
-      return { ...state, error: '', message: action.payload, loading: false };
-    }
-    case FETCH_ERROR: {
-      return { ...state, loading: false, error: action.payload, message: '' };
-    }
-    case HIDE_MESSAGE: {
-      return { ...state, loading: false, error: '', message: '' };
-    }
-    default:
-      return state;
+      case '@@router/LOCATION_CHANGE': {
+          return {
+              ...state,
+              pathname: action.payload.location.pathname,
+              navCollapsed: false,
+          };
+      }
+      case WINDOW_WIDTH:
+          return {
+              ...state,
+              width: action.width,
+          };
+      case TOGGLE_COLLAPSED_NAV: {
+          return {
+              ...state,
+              navCollapsed: action.navCollapsed,
+          };
+      }
+      case NAV_STYLE:
+          return {
+              ...state,
+              navStyle: action.navStyle,
+          };
+      default:
+          return state;
   }
 };

@@ -19,4 +19,13 @@ module.exports = {
 
         return [];
     },
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/portal/posts',
+                permanent: true,
+            },
+        ];
+    },
 };

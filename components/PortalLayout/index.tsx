@@ -12,7 +12,7 @@ const { Content, Footer } = Layout;
 const PortalLayout: NextPage = ({ children }) => {
     const dispatch = useDispatch();
     const [userInfo] = useAuthenticated();
-    let { width } = useSelector((state: any) => state.settings);
+    let { width } = useSelector((state: any) => state.common);
 
     if (width == null && window) {
         dispatch(updateWindowWidth(window.innerWidth));

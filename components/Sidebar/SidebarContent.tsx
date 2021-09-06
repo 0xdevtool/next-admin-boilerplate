@@ -16,7 +16,7 @@ import SidebarLogo from './SidebarLogo';
 
 const SidebarContent: NextPage = () => {
     let { pathname } = useSelector((state: any) => state.common);
-    const { locale, width, navStyle } = useSelector((state: any) => state.settings);
+    const { locale } = useSelector((state: any) => state.settings);
     const { user } = useSelector((state: any) => state.auth);
 
     const dispatch = useDispatch();

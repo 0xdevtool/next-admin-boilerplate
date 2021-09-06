@@ -1,0 +1,123 @@
+@import '../_variables.scss';
+
+.kdr-layout-sider-scrollbar {
+    height: calc(100vh - 175px) !important;
+}
+
+.ant-breadcrumb {
+    .ant-breadcrumb-link {
+        font-weight: 700;
+    }
+
+    .ant-breadcrumb-separator {
+        margin: 0 12px;
+    }
+
+    a {
+        color: $primary-color;
+    }
+}
+
+.ant-notification-notice {
+    color: $white-color;
+
+    .anticon {
+        color: $white-color;
+    }
+
+    &.ant-notification-notice-info {
+        background-color: $notify-info-bg-clor;
+    }
+
+    &.ant-notification-notice-success {
+        background-color: $notify-success-bg-clor;
+    }
+
+    &.ant-notification-notice-warning {
+        background-color: $notify-warning-bg-clor;
+    }
+
+    &.ant-notification-notice-error {
+        background-color: $notify-error-bg-clor;
+    }
+}
+
+.kdr-page-breadcrumbs {
+    margin: 0 0 1rem 0;
+}
+
+.ant-form {
+    .ant-row {
+        &.ant-form-item {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+.ant-btn-primary {
+    &.ant-btn-dangerous {
+        &:active {
+            &:not([disabled]):not(.disabled) {
+                background-color: $button-danger-hover-color !important;
+                border-color: $button-danger-hover-color !important;
+            }
+        }
+
+        background-color: $button-danger-color !important;
+        border-color: $button-danger-color !important;
+    }
+}
+
+.kdr-right-spin {
+    .anticon-spin {
+        &.ant-spin-dot {
+            left: 80% !important;
+        }
+    }
+}
+
+.ant-spin-blur {
+    opacity: 0.85;
+}
+
+.kdr-datepicker {
+    min-width: 10rem;
+}
+
+.kdr-hidden-tabs {
+    .ant-tabs-nav {
+        display: none;
+    }
+}
+
+.ant-form-item-label,
+.ant-form-item-control {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.kdr-letter-spacing-xs {
+    letter-spacing: 1px !important;
+}
+
+.flag-icon {
+    width: 1.1em !important;
+}
+
+.ant-table-body {
+    overflow-y: auto !important;
+}
+
+.ant-btn-primary.disabled,
+.ant-btn-primary:disabled {
+    opacity: 0.6;
+}
+
+.ant-menu-title-content {
+    margin-left: 5px;
+}
+
+.ant-menu-inline-collapsed {
+    padding-top: 1rem;
+}

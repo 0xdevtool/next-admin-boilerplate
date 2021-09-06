@@ -20,8 +20,7 @@ const { Sider } = Layout;
 const Sidebar: NextPage = () => {
     const dispatch = useDispatch();
 
-    let { locale, width, themeType, navStyle } = useSelector((state: any) => state.settings);
-    let { navCollapsed, pathname } = useSelector((state: any) => state.common);
+    const { width, navCollapsed, navStyle } = useSelector((state: any) => state.common);
 
     const drawerStyle = classNames(
         {
