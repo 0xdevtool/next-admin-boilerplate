@@ -5,7 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 /** @type {import('next').NextConfig} */
-module.exports = module.exports = withPlugins([[withBundleAnalyzer]], {
+module.exports = withPlugins([[withBundleAnalyzer]], {
     ...import('next').NextConfig,
     reactStrictMode: true,
     experimental: { granularChunks: true },
