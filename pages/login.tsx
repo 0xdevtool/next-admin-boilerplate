@@ -43,7 +43,7 @@ const SignInPage: React.FC<any> = () => {
                     setInProgress(false);
                 });
         },
-        [form, dispatch]
+        [dispatch]
     );
 
     return (
