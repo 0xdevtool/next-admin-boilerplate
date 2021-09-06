@@ -4,9 +4,7 @@ import Auxiliary from 'components/Auxiliary';
 import UserInfo from 'components/UserInfo';
 import UserProfile from 'components/UserProfile';
 import { NextPage } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import wlogo from 'public/images/w-logo.png';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleCollapsedSideNav } from 'store/actions';
@@ -36,22 +34,22 @@ const Topbar: NextPage = () => {
             <div className="kdn-d-block kdn-d-lg-none kdn-pointer">
                 <Link href="/">
                     <a>
-                        <Image alt="" className={styles.smlogo} src={wlogo} />
+                        <img alt="" className={styles.smlogo} src="/images/w-logo.png" />
                     </a>
                 </Link>
             </div>
 
             <ul className="kdn-header-notifications kdn-ml-auto">
-                <li className="kdn-sidebar-notification">
-                    <UserProfile />
-                </li>
-
-                {width < TAB_SIZE && (
+                {width < TAB_SIZE ? (
                     <Auxiliary>
                         <li className="kdn-user-nav">
                             <UserInfo />
                         </li>
                     </Auxiliary>
+                ) : (
+                    <li className="kdn-sidebar-notification">
+                        <UserProfile />
+                    </li>
                 )}
             </ul>
         </Header>

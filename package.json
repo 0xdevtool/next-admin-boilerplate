@@ -3,9 +3,11 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
+        "clean": "rimraf \"build/\"",
         "dev": "next dev",
-        "build": "next build && next export",
+        "build": "yarn clean && next build && next export -o \"build/\"",
         "start": "next start",
+        "serve": "serve build",
         "mock": "json-server --watch \"mock/db.json\" --port 5000 --routes \"mock/routes.json\" -m ./node_modules/json-server-auth",
         "lint": "next lint && yarn lint:styles",
         "lint:styles": "stylelint \"**/*.{scss,sass}\"",
@@ -43,6 +45,7 @@
         "json-server-auth": "^2.1.0",
         "prettier": "^2.3.2",
         "rimraf": "^3.0.2",
+        "serve": "^12.0.0",
         "stylelint": "^13.13.1",
         "stylelint-config-standard": "^22.0.0",
         "typescript": "4.4.2"

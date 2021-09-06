@@ -2,6 +2,7 @@ const path = require('path');
 
 /** @type {import('next').NextConfig} */
 module.exports = {
+    ...import('next').NextConfig,
     reactStrictMode: true,
     experimental: { granularChunks: true },
     sassOptions: {
