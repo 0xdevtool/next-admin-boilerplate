@@ -7,14 +7,13 @@ import { toggleCollapsedSideNav, toggleNavStyleChange } from 'store/actions';
 import { NAV_STYLE_DRAWER, NAV_STYLE_FIXED, NAV_STYLE_MINI_SIDEBAR, TAB_SIZE } from 'store/ActionTypes';
 import Link from 'next/link';
 import Image from 'next/image';
+import styles from './SidebarLogo.module.scss';
 
 const SidebarLogo: NextPage = () => {
     const dispatch = useDispatch();
 
     let { width, navStyle } = useSelector((state: any) => state.settings);
     let { navCollapsed } = useSelector((state: any) => state.common);
-
-    console.log(width);
 
     if (width < TAB_SIZE && navStyle === NAV_STYLE_FIXED) {
         navStyle = NAV_STYLE_DRAWER;
@@ -32,7 +31,7 @@ const SidebarLogo: NextPage = () => {
     return (
         <div className="kdn-layout-sider-header">
             {navStyle === NAV_STYLE_FIXED || navStyle === NAV_STYLE_MINI_SIDEBAR ? (
-                <div className="kdn-linebar">
+                <div className={styles.linebar}>
                     {navStyle === NAV_STYLE_MINI_SIDEBAR ? (
                         <MenuUnfoldOutlined onClick={toggleCollapseSideNav$} />
                     ) : (
@@ -43,7 +42,7 @@ const SidebarLogo: NextPage = () => {
 
             <Link href="/">
                 <div className="kdn-site-logo">
-                    <Image alt="log" src={wlogo} />
+                    <Image alt="log" className={styles.logo} src={wlogo} />
                 </div>
             </Link>
         </div>

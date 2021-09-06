@@ -19,7 +19,7 @@ httpClient.interceptors.request.use(
 );
 
 httpClient.interceptors.response.use(
-    (response) => response.data,
+    (response) => response,
     (error) => Promise.reject(error)
 );
 

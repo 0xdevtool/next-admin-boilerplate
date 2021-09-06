@@ -60,7 +60,7 @@ const SignInPage: React.FC<any> = () => {
         <Spin spinning={loading}>
             <Row>
                 <Col xs={{ span: 22, offset: 1 }} md={{ span: 12, offset: 6 }} xl={{ span: 8, offset: 8 }}>
-                    <div className="login-page kdr-mt-4 kdr-pt-4 kdr-flex-column kdr-align-items-center">
+                    <div className="login-page kdn-mt-4 kdn-pt-4 kdn-flex-column kdn-align-items-center">
                         <h1>
                             <IntlMessages id="page.content.login.header" />
                         </h1>
@@ -121,8 +121,8 @@ const SignInPage: React.FC<any> = () => {
                                 </Button>
                             </Form.Item>
 
-                            <p className="kdr-font-italic kdr-text-center">Demo Staff: staff@email.com / staff</p>
-                            <p className="kdr-font-italic kdr-text-center">Demo Admin: admin@email.com / admin</p>
+                            <p className="kdn-font-italic kdn-text-center">Demo Staff: staff@email.com / staff</p>
+                            <p className="kdn-font-italic kdn-text-center">Demo Admin: admin@email.com / admin</p>
                         </Form>
                     </div>
                 </Col>

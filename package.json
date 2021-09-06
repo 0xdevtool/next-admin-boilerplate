@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
+        "build": "next build && next export",
         "start": "next start",
         "mock": "json-server --watch \"mock/db.json\" --port 5000 --routes \"mock/routes.json\" -m ./node_modules/json-server-auth",
         "lint": "next lint"

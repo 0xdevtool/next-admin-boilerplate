@@ -13,7 +13,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { switchLanguage, toggleCollapsedSideNav } from 'store/actions';
 import { NAV_STYLE_DRAWER, NAV_STYLE_FIXED, NAV_STYLE_MINI_SIDEBAR, TAB_SIZE } from 'store/ActionTypes';
-
+import styles from './Topbar.module.scss';
 const { Header } = Layout;
 
 const Topbar: NextPage = () => {
@@ -22,7 +22,7 @@ const Topbar: NextPage = () => {
     const dispatch = useDispatch();
 
     const languageMenu = () => (
-        <CustomScrollbars className="kdn-popover-lang-scroll">
+        <CustomScrollbars className={styles['lang-scroll']}>
             <ul className="kdn-sub-popover">
                 {languageData.map((language) => (
                     <li
@@ -53,7 +53,7 @@ const Topbar: NextPage = () => {
 
             <div className="kdn-d-block kdn-d-lg-none kdn-pointer">
                 <Link href="/">
-                    <Image alt="" className="kdn-sm-logo" src={wlogo} />
+                    <Image alt="" className={styles.smlogo} src={wlogo} />
                 </Link>
             </div>
 

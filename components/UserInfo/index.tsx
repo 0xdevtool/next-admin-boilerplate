@@ -1,12 +1,23 @@
 import { Avatar, Popover } from 'antd';
+import { useRouter } from 'next/router';
+import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+import { logOut } from 'store/actions';
 
-import type { NextPage } from 'next';
+const UserInfo = () => {
+    const dispatch = useDispatch();
+    const router = useRouter();
 
-const UserInfo: NextPage = () => {
+    const onLogOut = useCallback(() => {
+        dispatch(logOut());
+        router.push('/login');
+    }, [dispatch]);
+
     const userMenuOptions = (
         <ul className="kdn-user-popover">
             <li>My Account</li>
             <li>Connections</li>
+            <li onClick={onLogOut}>Logout</li>
         </ul>
     );
 
@@ -17,7 +28,7 @@ const UserInfo: NextPage = () => {
             content={userMenuOptions}
             trigger="click"
         >
-            <Avatar src={'https://via.placeholder.com/150x150'} className="kdn-avatar kdn-pointer" alt="" />
+            <Avatar src="https://via.placeholder.com/150x150" className="kdn-avatar kdn-pointer" alt="" />
         </Popover>
     );
 };

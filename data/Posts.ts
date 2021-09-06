@@ -1,11 +1,11 @@
-import { jsonFetcher } from 'libs';
+import { safeJsonFetcher } from 'libs';
 import useSWR from 'swr';
 
 import { Post } from './models';
 
-export function usePosts(page: number, pageSize: number) {
+export function usePosts(page: number = 0, pageSize: number = 20) {
     const lstPostMapper = (url: string) =>
-        jsonFetcher(url).then((payload: any) => {
+        safeJsonFetcher(url).then((payload: any) => {
             if (payload == null || payload.length === 0) {
                 return [];
             }

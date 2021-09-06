@@ -1,3 +1,4 @@
+import { loadStorageAuthUserInfo } from 'store/actions';
 import { AUTH_USER_INFO } from 'store/ActionTypes';
 
 const INIT_STATE = {

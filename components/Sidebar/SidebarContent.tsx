@@ -1,24 +1,29 @@
-import { DashboardOutlined, SettingOutlined, SkinOutlined, SnippetsOutlined } from '@ant-design/icons';
+import { ContainerOutlined, SettingOutlined, TeamOutlined } from '@ant-design/icons';
 import { Menu, Popover } from 'antd';
+import classNames from 'classnames';
 import CustomScrollbars from 'components/CustomScrollbar';
 import IntlMessages from 'components/IntlMessages';
+import { isAdmin } from 'data/models';
 import { languageData } from 'locales';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { switchLanguage } from 'store/actions';
+import styles from './SidebarContent.module.scss';
 
 import SidebarLogo from './SidebarLogo';
 
 const SidebarContent: NextPage = () => {
     let { pathname } = useSelector((state: any) => state.common);
     const { locale, width, navStyle } = useSelector((state: any) => state.settings);
+    const { user } = useSelector((state: any) => state.auth);
 
     const dispatch = useDispatch();
+    const popoverLangCls = classNames('kdn-popover-lang-scroll', styles['lang-scroll']);
 
     const languageMenu = () => (
-        <CustomScrollbars className="kdn-popover-lang-scroll">
+        <CustomScrollbars className={popoverLangCls}>
             <ul className="kdn-sub-popover">
                 {languageData.map((language) => (
                     <li
@@ -43,40 +48,39 @@ const SidebarContent: NextPage = () => {
             <div className="kdn-sidebar-content">
                 <CustomScrollbars className="kdn-layout-sider-scrollbar">
                     <Menu defaultOpenKeys={[defaultOpenKeys]} selectedKeys={[selectedKeys]} theme="dark" mode="inline">
-                        <Menu.Item key="">
-                            <Link href="/">
-                                <>
-                                    <DashboardOutlined />
-                                    <span>
-                                        <IntlMessages id="sidebar.dashboardPage" />
-                                    </span>
-                                </>
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key="sample">
-                            <Link href="/sample">
-                                <>
-                                    <SnippetsOutlined />
-                                    <span>
-                                        <IntlMessages id="sidebar.samplePage" />
-                                    </span>
-                                </>
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key="products">
-                            <Link href="/products">
-                                <>
-                                    <SkinOutlined />
-                                    <span>
-                                        <IntlMessages id="sidebar.productListPage" />
-                                    </span>
-                                </>
-                            </Link>
-                        </Menu.Item>
+                        <Menu.SubMenu
+                            key="posts"
+                            icon={<ContainerOutlined />}
+                            title={<IntlMessages id="sidebar.post.list" />}
+                        >
+                            <Menu.Item key="/portal/posts">
+                                <Link href="/portal/posts">
+                                    <a>
+                                        <IntlMessages id="sidebar.post.list.active" />
+                                    </a>
+                                </Link>
+                            </Menu.Item>
+                        </Menu.SubMenu>
+
+                        {isAdmin(user?.roles) && (
+                            <Menu.SubMenu
+                                key="users"
+                                icon={<TeamOutlined />}
+                                title={<IntlMessages id="sidebar.user.list" />}
+                            >
+                                <Menu.Item key="/portal/users">
+                                    <Link href="/portal/users">
+                                        <a>
+                                            <IntlMessages id="sidebar.user.list.active" />
+                                        </a>
+                                    </Link>
+                                </Menu.Item>
+                            </Menu.SubMenu>
+                        )}
                     </Menu>
                 </CustomScrollbars>
 
-                <Menu theme="dark" mode="inline" className="kdn-bottom-menu">
+                <Menu theme="dark" mode="inline" className={styles['bottom-menu']}>
                     <Menu.Item key="languages">
                         <Popover
                             overlayClassName="kdn-popover-horizontal"
@@ -92,12 +96,12 @@ const SidebarContent: NextPage = () => {
 
                     <Menu.Item key="settings">
                         <Link href="/settings">
-                            <>
+                            <a>
                                 <SettingOutlined />
                                 <span>
                                     <IntlMessages id="sidebar.settingPage" />
                                 </span>
-                            </>
+                            </a>
                         </Link>
                     </Menu.Item>
                 </Menu>

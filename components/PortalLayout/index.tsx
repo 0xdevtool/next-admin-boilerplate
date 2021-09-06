@@ -6,10 +6,12 @@ import React from 'react';
 import type { NextPage } from 'next';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateWindowWidth } from 'store/actions';
+import useAuthenticated from 'hooks/UseAuthentication';
 const { Content, Footer } = Layout;
 
 const PortalLayout: NextPage = ({ children }) => {
     const dispatch = useDispatch();
+    const [userInfo] = useAuthenticated();
     let { width } = useSelector((state: any) => state.settings);
 
     if (width == null && window) {

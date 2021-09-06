@@ -7,16 +7,16 @@ import AppLocale from 'locales';
 import dynamic from 'next/dynamic';
 import Router, { useRouter } from 'next/router';
 import nProgress from 'nprogress';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IntlProvider } from 'react-intl';
 import { Provider, useSelector } from 'react-redux';
 import { useStore } from 'store';
+import { loadStorageAuthUserInfo } from 'store/actions';
 
 import FlatLayout from '../components/FlatLayout';
 import PortalLayout from '../components/PortalLayout';
 
 import type { AppProps } from 'next/app';
-
 // add nprogress bar
 Router.events.on('routeChangeStart', nProgress.start);
 Router.events.on('routeChangeError', nProgress.done);
@@ -53,8 +53,13 @@ function MainWrapper(props: AppProps) {
     );
 }
 
-function MainApp(props: AppProps) {
-    const store = useStore(props.pageProps.initialReduxState);
+function MainApp(props: any) {
+    const initialState = {
+        auth: {
+            user: loadStorageAuthUserInfo(),
+        },
+    };
+    const store = useStore({ ...props.pageProps.initialReduxState, ...initialState });
 
     return (
         <Provider store={store}>

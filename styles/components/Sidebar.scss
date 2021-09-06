@@ -1,14 +1,5 @@
-.kdn-site-logo {
-    img {
-        height: 40px;
-    }
-}
-
 .kdn-layout-sider-header {
-    .kdn-linebar {
-        top: unset !important;
-        left: 32px !important;
-    }
+    padding-left: 32px !important;
 }
 
 .kdn-sidebar-content {
@@ -29,9 +20,4 @@
             }
         }
     }
-}
-
-.kdn-bottom-menu {
-    position: absolute;
-    bottom: 0;
 }
