@@ -4,6 +4,7 @@
     "private": true,
     "scripts": {
         "clean": "rimraf \"build/\"",
+        "analyze": "yarn clean && cross-env ANALYZE=true yarn build -- --stats && webpack-bundle-analyzer \"./build/bundle-stats.json\"",
         "dev": "next dev",
         "build": "yarn clean && next build && next export -o \"build/\"",
         "start": "next start",
@@ -35,6 +36,7 @@
         "swr": "^1.0.0"
     },
     "devDependencies": {
+        "@next/bundle-analyzer": "^11.1.2",
         "@types/nprogress": "^0.2.0",
         "@types/react": "17.0.19",
         "@types/react-custom-scrollbars": "^4.0.8",
@@ -43,6 +45,7 @@
         "eslint-config-next": "11.1.0",
         "json-server": "^0.16.3",
         "json-server-auth": "^2.1.0",
+        "next-compose-plugins": "^2.2.1",
         "prettier": "^2.3.2",
         "rimraf": "^3.0.2",
         "serve": "^12.0.0",
